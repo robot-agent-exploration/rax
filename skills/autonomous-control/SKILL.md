@@ -56,8 +56,19 @@ A new layout should need new perception and parameters, not new motion code.
 - Keep tunable values as named constants at the top of a module, with their tested
   ranges.
 - `controller.py:main(ctx)` chains the steps, stops at the first failure and returns a
-  report. `code/<project>/README.md` says how to run the whole controller and each
-  step, with their preconditions.
+report. `code/<project>/README.md` says how to run the whole controller and each
+step, with their preconditions.
+
+After writing or changing the project, run the checker and fix every problem it
+reports:
+
+```bash
+python3 skills/autonomous-control/scripts/check_controller.py code/<project>/
+```
+
+In a session workspace the same script lives at
+`.agents/skills/autonomous-control/scripts/check_controller.py`. Pass the workspace
+root to scan every `code/<project>/`. A worked example is in [examples/ok](examples/ok).
 
 When AGENTS.md keeps you in the loop, each step that ends where a mistake would drop,
 crush or knock something returns a checkpoint for you or a subagent to settle from the
