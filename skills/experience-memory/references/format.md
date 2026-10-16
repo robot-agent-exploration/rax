@@ -70,4 +70,23 @@ hidden state, inferred task success or an unobserved object pose.
 
 A branch may extend an example with robot-specific fields (step ids, frame indices, an
 action representation, demonstration provenance); define them in the robot's
-pose-record reference rather than here.
+pose-record reference rather than here. Extra keys on an example are allowed; the
+required keys above must still be present.
+
+## Checking
+
+From the repository or a session workspace:
+
+```bash
+python3 skills/experience-memory/scripts/check_memory.py memory/
+python3 skills/experience-memory/scripts/check_memory.py memory/ --json
+```
+
+The checker walks `TIPS.md`, `INDEX.md` and every `memory/skills/<slug>/`. It confirms
+table columns, slug names, learned-skill frontmatter and bullets, `evidence.json`
+fields, and that INDEX rows and skill folders agree. An empty `memory/` directory is
+valid. Distilled skills without `TIPS.md` are not. Exit status is 1 when anything
+breaks the format.
+
+A valid tree is checked in as [examples/ok](../examples/ok). Tests live next to the
+script; from the repository root run `python3 skills/run_tests.py`.

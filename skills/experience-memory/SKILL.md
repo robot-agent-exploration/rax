@@ -45,8 +45,18 @@ fresh images; otherwise `observed`. Revise a skill when later evidence contradic
 and keep its provenance.
 
 Read [references/format.md](references/format.md) when creating or updating a learned
-skill. When a procedure has worked unattended and a persistent library exists, also
-contribute it there ([continual-learning](../continual-learning/SKILL.md)).
+skill. After writing or changing `memory/`, run the checker and fix every problem it
+reports:
+
+```bash
+python3 skills/experience-memory/scripts/check_memory.py memory/
+```
+
+In a session workspace the same script lives at
+`.agents/skills/experience-memory/scripts/check_memory.py`. A worked example is in
+[examples/ok](examples/ok). When a procedure has worked unattended and a persistent
+library exists, also contribute it there
+([continual-learning](../continual-learning/SKILL.md)).
 
 ## Code that runs without memory
 

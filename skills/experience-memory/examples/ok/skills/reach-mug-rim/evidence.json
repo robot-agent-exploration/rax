@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "skill": "learned-reach-mug-rim",
+  "examples": [
+    {
+      "task": "put the mug on the coaster",
+      "episode_or_date": "2026-10-15",
+      "confirmation": "observed",
+      "frames": ["runtime/frames/f012/overview.jpg"],
+      "executed_action": {
+        "tool": "move_pose",
+        "arguments": {
+          "position": [0.42, 0.11, 0.18],
+          "relative": false
+        }
+      },
+      "pose_recipe": "overview rim point, robot frame, +0.04 m z",
+      "point_reacquisition": "rim pixels in the overview camera, median of a 5x5 window, object-localization depth",
+      "observed_effect": "gripper centred above the rim, no contact"
+    }
+  ]
+}
