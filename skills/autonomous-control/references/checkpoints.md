@@ -44,3 +44,18 @@ checkpoint:
 
 Record in the run log where you looked, what you saw and what you decided, so the
 checkpoints that matter become visible and the reliable ones can later run unattended.
+
+## Checking
+
+From the repository or a session workspace:
+
+```bash
+python3 skills/autonomous-control/scripts/check_controller.py code/<project>/
+python3 skills/autonomous-control/scripts/check_controller.py . --json
+```
+
+The checker confirms `controller.py` defines `main(ctx)`, returns `{ok, measured, why}`,
+never opens `Context()`, and that README documents the run and every checkpoint brief
+(or writes `None`). Exit status is 1 when anything breaks the contract. A valid project
+is checked in as [examples/ok](../examples/ok). From the repository root run
+`python3 skills/run_tests.py`.
