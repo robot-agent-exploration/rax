@@ -12,7 +12,7 @@ skills' links resolve while you browse.
 | --- | --- |
 | [manual-robot-control](manual-robot-control/SKILL.md) | Solve the task by hand: a completion checklist, small grounded steps, measured versus commanded state, refusals as walls, success confirmed in fresh views. |
 | [autonomous-control](autonomous-control/SKILL.md) | Compile what worked into `controller.py:main(ctx)`: invariant motion in the object's frame, step functions returning `{ok, measured, why}`, end-to-end tests from fresh scenes, optional [perception checkpoints](autonomous-control/references/checkpoints.md). |
-| [experience-memory](experience-memory/SKILL.md) | Task memory in `memory/`: tips recorded the moment something works, learned skills with evidence ([format](experience-memory/references/format.md)). |
+| [experience-memory](experience-memory/SKILL.md) | Task memory in `memory/`: tips recorded the moment something works, learned skills with evidence ([format](experience-memory/references/format.md)). Check a session tree with [check_memory.py](experience-memory/scripts/check_memory.py). |
 | [in-context-action-learning](in-context-action-learning/SKILL.md) | Use image demonstrations for intent and strategy, never as motion data. |
 | [transfer-handoff](transfer-handoff/SKILL.md) | A motion-planning handoff for a later session on unseen scenes. |
 | [continual-learning](continual-learning/SKILL.md) | A persistent, merged library of verified executable sub-task skills across sessions ([format](continual-learning/references/library-format.md)). |
